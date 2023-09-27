@@ -17,7 +17,7 @@ const roboto = Roboto_Serif({
   weight: ["100", "200", "300", "400"],
 });
 
- /*const metadata = {
+ /*const metadata = { 
   title: "Found Pets",
   description: "Made with love 🐶",
 };*/
