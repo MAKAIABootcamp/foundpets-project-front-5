@@ -34,7 +34,7 @@ export const startLoginWithGoogle = () => {
       if (record.userImage == '') {
         record.userImage = result.meta.avatarUrl
       }
-      if(record.qr == ''){
+      if (record.qr == '') {
         record.qr = uuidv4()
         record = await updateUserBd(record)
       }
@@ -109,15 +109,15 @@ export const startLoginWithEmailPassword = (data2) => {
     }
     catch (error) {
 
-      if (error.message === "Failed to authenticate.") {
-        Swal.fire({
-          title: 'Falla de validación',
-          text: 'Credenciales incorrectas',
-          icon: 'error',
-          confirmButtonText: 'Intentar de nuevo'
-        })
-        dispatch(logout())
-      }
+
+      Swal.fire({
+        title: 'Falla de validación',
+        text: 'Credenciales incorrectas',
+        icon: 'error',
+        confirmButtonText: 'Intentar de nuevo'
+      })
+      dispatch(logout())
+
     }
 
   }
