@@ -6,6 +6,7 @@ export const client = new PocketBase(DBURL);
 
 export const createUser = async (data) => {
 
+  
   const newUser = {
     name: data.name,
     emailVisibility: true,
@@ -26,6 +27,7 @@ export const createUser = async (data) => {
 
 export const authWithEmail = async (data2) => {
   try {
+    
     const authData = await client.collection("users").authWithPassword(new String(data2.email).toLowerCase(), data2.password);
     return authData;
   }
